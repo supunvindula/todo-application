@@ -1,4 +1,5 @@
 const models = require("../models");
+const validator = require("fastest-validator");
 
 function create(req, res) {
   const todo = {
@@ -6,6 +7,27 @@ function create(req, res) {
     description: req.body.description,
     status: "todo",
   };
+
+  //validating response
+  const schema = {
+    title: { type: "string", optional: false, max: 100 },
+    description: { type: "string", optional: true, max: 500 },
+    status: {
+      type: "enum",
+      values: ["todo", "inprogress", "done"],
+      optional: false,
+    },
+  };
+
+  const v = new validator();
+  const validationResponse = v.validate(todo, schema);
+
+  if (validationResponse !== true) {
+    return res.status(400).json({
+      message: "validation failed",
+      error: validationResponse,
+    });
+  }
 
   models.Todo.create(todo)
     .then((result) => {
@@ -40,6 +62,27 @@ function update(req, res) {
     description: req.body.description,
     status: req.body.status,
   };
+
+  //validating response
+  const schema = {
+    title: { type: "string", optional: true, max: 100 },
+    description: { type: "string", optional: true, max: 500 },
+    status: {
+      type: "enum",
+      values: ["todo", "inprogress", "done"],
+      optional: true,
+    },
+  };
+
+  const v = new validator();
+  const validationResponse = v.validate(updatedTodo, schema);
+
+  if (validationResponse !== true) {
+    return res.status(400).json({
+      message: "validation failed",
+      error: validationResponse,
+    });
+  }
 
   models.Todo.update(updatedTodo, {
     where: {
