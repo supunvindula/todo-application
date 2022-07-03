@@ -122,7 +122,6 @@ function login(req, res) {
                   expiresIn: "3d",
                 },
                 function (err, token) {
-                  console.log(token);
                   res.status(200).json({
                     message: "Authentication succeful",
                     token: token,

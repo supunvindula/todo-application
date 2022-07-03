@@ -6,6 +6,7 @@ function create(req, res) {
     title: req.body.title,
     description: req.body.description,
     status: "todo",
+    userId: req.userData.userId,
   };
 
   //validating response
@@ -45,7 +46,7 @@ function create(req, res) {
 }
 
 function getTasks(req, res) {
-  models.Todo.findAll()
+  models.Todo.findAll({ where: { userId: req.userData.userId } })
     .then((result) => {
       res.status(200).json(result);
     })
@@ -61,6 +62,7 @@ function update(req, res) {
     title: req.body.title,
     description: req.body.description,
     status: req.body.status,
+    userId: req.userData.userId,
   };
 
   //validating response
@@ -87,6 +89,7 @@ function update(req, res) {
   models.Todo.update(updatedTodo, {
     where: {
       id: id,
+      userId: req.userData.userId,
     },
   })
     .then((result) => {
@@ -111,7 +114,7 @@ function update(req, res) {
 
 function deleteTodo(req, res) {
   const id = req.params.id;
-  models.Todo.destroy({ where: { id: id } })
+  models.Todo.destroy({ where: { id: id, userId: req.userData.userId } })
     .then((result) => {
       if (result) {
         res.status(200).json({

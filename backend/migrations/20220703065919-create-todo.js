@@ -12,11 +12,14 @@ module.exports = {
         type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.TEXT,
         allowNull: true,
+        type: Sequelize.TEXT,
       },
       status: {
         type: Sequelize.ENUM("todo", "inprogress", "done"),
+      },
+      userId: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
