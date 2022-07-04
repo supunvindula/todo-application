@@ -1,0 +1,88 @@
+.modalContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addItemContainer {
+  width: 50%;
+  height: 40%;
+  background: linear-gradient(#ffecd2, #fcb69f);
+  font-family: "Lato", Arial, sans-serif;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.addItemTitle {
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.addItemInput {
+  height: 50px;
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  background-color: beige;
+}
+
+.addItemButton {
+  width: 40%;
+  margin: auto;
+  border: none;
+  background-color: teal;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition-duration: 0.2s;
+}
+
+.addItemButton:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.addItemButton:disabled {
+  cursor: not-allowed;
+  background-color: rgb(150, 191, 191);
+}
+
+.addItemButtonDiv {
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage {
+  margin: 10px auto;
+  background-color: lightcoral;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.successMessage {
+  margin: 10px auto;
+  background-color: lightseagreen;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.passwordDescription {
+  font-weight: 500;
+  font-size: small;
+  margin-top: 0;
+}

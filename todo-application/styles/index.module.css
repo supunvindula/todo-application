@@ -1,0 +1,12 @@
+.noTaskMessage {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.loginErrorMessage {
+  color: red;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}

@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Tahoma, sans-serif;
+  background: linear-gradient(TO RIGHT, #e9f8ff, #90b2d8, #c1e3ff);
 }
 
 a {
