@@ -42,4 +42,4 @@ On both directories run `npm run dev` to start the server and UI.
 
 ## To test the backend
 Run `npm test` in backend directory. mocha, chai and chai-http has been used to test the backend API.
-
+![test result](https://github.com/supunvindula/todo-application/blob/main/test-result.JPG)
