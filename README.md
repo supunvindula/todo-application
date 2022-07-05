@@ -8,7 +8,20 @@ open **cmd (or gitbash)** in the **backend-todo-application** and **backend-todo
 
 Install the dependencies in both directories using `npm install`.
 
-Add  `.env.local`  file in the project root directory and  `.env`  file in the backend directory.
+## SETTING UP .ENV FILES
+
+In the backend-todo-application add **nodemon.json** and add a code to that. You can edit the secret as you wish
+
+    {
+	    "env":  {
+		    "SECRET":  "thisisthes3cre74t0d0app#####"
+	    }
+    }
+
+In the todo-application directory (front end) add  a file named as **.env.local** and add the following code. You can change the API endpoint as you need.
+
+    API_END_POINT = http://localhost:5000
+
 
 ## Database configuration
 Create MySql schema using mysql workbench (recommended) or any other software.
